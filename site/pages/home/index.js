@@ -8,6 +8,8 @@ import AwardsSlice from '../../slices/awards-slice';
 import ChecklistContactUs from '../../slices/checklist-contact-us-slice';
 import NewsLetter from './newsletter-slice';
 import Social from '../../components/social';
+import HubspotSignup from './hubspot-signup';
+
 import metaImage from './meta-image.jpg';
 import TestimonialsSlice from './client-testimonials-slice';
 
@@ -21,6 +23,8 @@ export default function HomePage() {
     url: 'https://red-badger.com',
   };
 
+  const hubspotSignup = true;
+
   return (
     <div>
       <Social {...social} />
@@ -30,7 +34,7 @@ export default function HomePage() {
       <ChecklistContactUs />
       <TechSlice />
       <AwardsSlice />
-      <NewsLetter />
+      {hubspotSignup ? <HubspotSignup /> : <NewsLetter />}
     </div>
   );
 }
